@@ -205,15 +205,13 @@ def main():
         string_to_sign_enc = string_to_sign.encode('utf-8')
         hmac_code = hmac.new(secret_enc, string_to_sign_enc, digestmod=hashlib.sha256).digest()
         sign = urllib.parse.quote_plus(base64.b64encode(hmac_code))
-        url = f'https://oapi.dingtalk.com/robot/send?access_token={ddtoken}×tamp={timestamp}&sign={sign}'
+        url = f'https://oapi.dingtalk.com/robot/send?access_token={ddtoken}&timestamp={timestamp}&sign={sign}'
         headers = {"Content-Type": "application/json;charset=utf-8"}
         data = {"msgtype": "markdown",
-                "markdown": {"title": f"sing189", "text": f"sing189 \n> {res1} \n>{res2}{res3}{res4}"}}
+                "markdown": {"title": f"sing189", "text": f"{username} \n> {res1} \n>{res2}{res3}{res4}"}}
         response = requests.post(
             url=url, data=json.dumps(data), headers=headers, timeout=15
         ).json()
-        print(ddtoken)
-        print(ddsecret)
         print(response)
         if not response["errcode"]:
             print("钉钉机器人 推送成功！")
