@@ -235,8 +235,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='天翼云签到脚本')
     parser.add_argument('--username', type=str, help='账号')
     parser.add_argument('--password', type=str, help='密码')
+    parser.add_argument('--ddtoken', type=str, help='dd机器人推送')
+    parser.add_argument('--ddsecret', type=str, help='dd机器人推送')
     args = parser.parse_args()
     username = args.username
     password = args.password
+    ddtoken = args.ddtoken
+    ddsecret = args.ddsecret
     # time.sleep(random.randint(5, 30))
     main()
