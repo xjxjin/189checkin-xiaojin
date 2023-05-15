@@ -32,8 +32,8 @@ if(username == "" or password == ""):
 # assert username and password, "在第23、24行填入有效账号和密码"
 
 # 钉钉机器人token 申请key 并设置密钥
-ddtoken = ""
-ddsecret = ""
+ddtoken = "085364e80dbfc620b249e2d9aba618922ab3d82d5bba4d65d02d4aa05fe88111"
+ddsecret = "test"
 # xuthuskey = "27a...........................7b"
 
 if not ddtoken:
