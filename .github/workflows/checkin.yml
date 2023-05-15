@@ -7,6 +7,12 @@ on:
     branches: [ master ]
   schedule:
     - cron: 25 3,10,19,21 * * *
+    
+on: 
+  release:
+    types: [published]
+  watch:
+    types: [started]
 
 jobs:
   check-in:
