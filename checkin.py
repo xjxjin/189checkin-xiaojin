@@ -212,7 +212,6 @@ def main():
         response = requests.post(
             url=url, data=json.dumps(data), headers=headers, timeout=15
         ).json()
-        print(response)
         if not response["errcode"]:
             print("钉钉机器人 推送成功！")
         else:
